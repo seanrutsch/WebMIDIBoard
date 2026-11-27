@@ -1,0 +1,14 @@
+# Dependencies and build output (used once the application toolchain lands)
+node_modules/
+dist/
+build/
+
+# Logs and local data
+*.log
+.env
+.env.*
+
+# OS / editor noise
+.DS_Store
+.idea/
+.vscode/

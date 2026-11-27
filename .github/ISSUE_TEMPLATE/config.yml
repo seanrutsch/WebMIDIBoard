@@ -1,0 +1,8 @@
+# Configuration for new issues on this repository.
+blank_issues_enabled: true
+
+# Add contact links here once community channels exist, e.g.:
+# contact_links:
+#   - name: Community forum
+#     url: https://github.com/seanrutsch/WebMIDIBoard/discussions
+#     about: Please ask and answer questions here.

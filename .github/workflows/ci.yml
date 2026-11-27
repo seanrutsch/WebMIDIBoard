@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint docs and workflows
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Lint Markdown (markdownlint)
+        run: npx --yes markdownlint-cli2@latest "**/*.md"
+
+      - name: Lint workflows (actionlint)
+        run: |
+          set -euo pipefail
+          version=1.7.12
+          curl -sSfL "https://github.com/rhysd/actionlint/releases/download/v${version}/actionlint_${version}_linux_amd64.tar.gz" -o /tmp/actionlint.tgz
+          tar -xzf /tmp/actionlint.tgz -C /usr/local/bin actionlint
+          actionlint --color .github/workflows/
+
+      # TODO: add a build/test job here once the application toolchain lands.
