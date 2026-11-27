@@ -4,7 +4,7 @@ Instructions for autonomous coding agents (Claude Code, Codex, Copilot, and simi
 
 ## Project overview
 
-WebMIDIBoard is a web application for building and using MIDI boards (control surfaces) in the browser, based on the Web MIDI API.
+WebMIDIBoard is a browser-based WebMIDI editor for the Kurzweil MIDIBoard.
 
 **Current state: early development.** The repository contains open source infrastructure only — no application code yet. If a task seems to require app code that is not here, stop and ask the maintainer before scaffolding anything.
 

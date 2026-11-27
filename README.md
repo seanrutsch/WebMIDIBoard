@@ -1,6 +1,6 @@
 # WebMIDIBoard
 
-WebMIDIBoard brings a virtual MIDI board (control surface) to the web browser, built on the [Web MIDI API](https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API).
+WebMIDIBoard is a browser-based WebMIDI editor for the Kurzweil MIDIBoard, built on the [Web MIDI API](https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API).
 
 > **Status: early development.** This repository currently holds the open source foundation (license, contribution guide, CI, and agent documentation). Application code will land here as the project is built.
 
