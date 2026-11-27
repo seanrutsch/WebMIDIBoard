@@ -1,0 +1,38 @@
+name: Bug report
+description: Report a reproducible problem with WebMIDIBoard
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened, and what did you expect to happen instead?
+      placeholder: "I expected X but got Y"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Connect a MIDI device (which one?)
+        2. Open ... in Chrome/Edge
+        3. Do ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: WebMIDI depends on the browser, so this matters a lot.
+      placeholder: |
+        OS (e.g., macOS 15.2)
+        Browser + version (e.g., Chrome 141)
+        MIDI device / driver, if relevant
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Browser console output, error messages, or a screen recording.
