@@ -14,14 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Lint Markdown (markdownlint)
         run: npx --yes markdownlint-cli2@latest "**/*.md"
@@ -33,6 +33,8 @@ jobs:
           curl -sSfL "https://github.com/rhysd/actionlint/releases/download/v${version}/actionlint_${version}_linux_amd64.tar.gz" -o /tmp/actionlint.tgz
           mkdir -p "${HOME}/bin"
           tar -xzf /tmp/actionlint.tgz -C "${HOME}/bin" actionlint
-          "${HOME}/bin/actionlint" --color .github/workflows/
+          # No target argument on purpose: v1.7.x rejects directory paths; with no args
+          # actionlint auto-detects the nearest .github/workflows directory (repo root in CI).
+          "${HOME}/bin/actionlint" --color
 
       # TODO: add a build/test job here once the application toolchain lands.
