@@ -1,0 +1,7 @@
+# markdownlint-cli2 CLI configuration.
+# The PR template intentionally starts with "## Summary" (its content is pasted
+# into pull request descriptions, where a top-level heading would be unwanted),
+# so it is excluded from linting here. Rules live in .markdownlint.json; do not
+# disable MD041 globally just to accommodate this file.
+ignores:
+  - ".github/PULL_REQUEST_TEMPLATE.md"
